@@ -26,27 +26,33 @@ function begin_prg()
 	#Location of output file	
 	file_output = args["arg3"]
 	
+	arr_length = Int[]
 	vector_model, dictionary = load_model("$model_path")
 	result_csv = open(file_output,"w")
 	fopen = open(file)	
 	f = readlines(fopen)
 	write(result_csv,"Word, Similar_Word,Sense_id,Semantic_Similarity\n")
 	#dict_keys = keys(dictionary.word2id)
-	
+	arr = Any[]
 	for x in f
-		word = strip(x)
+		word = strip(string((x)))
 		println(word)
-		for i = 1:3	
-			values=nearest_neighbors(vector_model,dictionary,word,i,20) 
-		
-			for y in values
-				arr = [x]
-				temp_tuple = x,values
-				for z in y
-					push!(arr,string(z))
+		if(haskey(dictionary.word2id,word)==true)
+			for i = 1:3				
+				values=nearest_neighbors(vector_model,dictionary,word,i,50) 
+				if(length(values)>0)
+					for y in values
+						empty!(arr)
+						#push!(arr,x)
+						temp_tuple = word,values
+						for z in y
+							push!(arr,string(z))
+						end
+						unshift!(arr,word)
+						write(result_csv,join(arr,"\t"),"\n")
+					println(temp_tuple)
+					end
 				end
-				write(result_csv,join(arr,","),"\n")
-			println(temp_tuple)
 			end				
 		end		
 		
