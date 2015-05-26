@@ -31,7 +31,7 @@ function begin_prg()
 	result_csv = open(file_output,"w")
 	fopen = open(file)	
 	f = readlines(fopen)
-	write(result_csv,"Word, Similar_Word,Sense_id,Semantic_Similarity\n")
+	write(result_csv,"Word\tSimilar_Word\tSense_id\tSemantic_Similarity\n")
 	#dict_keys = keys(dictionary.word2id)
 	arr = Any[]
 	for x in f
