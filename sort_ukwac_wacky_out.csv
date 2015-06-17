@@ -1,4 +1,4 @@
-Word	Similar_Word	Sense_id	Semantic_Similarity
+Word	Src-Sense_id	Similar_Word	Dest_Sense_id	Semantic_Similarity
 apple	1	compatibles	1	0.8793702
 apple	1	computers	1	0.848253
 apple	1	desktop	1	0.87717295
