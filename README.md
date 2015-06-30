@@ -1,8 +1,7 @@
 The list of trained models:
 ----------
-
-https://www.dropbox.com/s/9hi948yhdmhkic3/HugeModel?dl=0
-https://www.dropbox.com/s/dy17o6cf74g7xxv/LargeCorpusNewModel?dl=0
+- Wacky raw: https://www.dropbox.com/s/9hi948yhdmhkic3/HugeModel?dl=0
+- Wacky+ukWaC raw: https://www.dropbox.com/s/dy17o6cf74g7xxv/LargeCorpusNewModel?dl=0
 
 How to execute TrainModel.jl?
 ----
