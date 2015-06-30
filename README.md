@@ -51,12 +51,13 @@ Installation of AdaGram:
 Note:- 
 1) Step 2 in “Installation of AdaGram” will not run if clang is not installed. Usually, an error will be thrown saying clang is not installed. To overcome this, open the build.sh file. Comment the if-else section  that checks for the location of clang installation and replace export CC = “clang” with export CC=”gcc” before the if-else section(The section that is checking for clang installation):
 
-
+```
 export CC="gcc"
-  
+
 #  if clang >/dev/null 2>&1 ; then
 # 	 echo "clang is not installed, switching to gcc"
 #       export CC="gcc"
 #  fi
+```
 
 2) Run build.sh
