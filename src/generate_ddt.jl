@@ -35,13 +35,15 @@ function main()
 	voc_file = open(voc_fpath)
 
   # save relations
-	write(output_file,"Word\tSrc-Sense_id\tSenseProb\tSimilar_Word\tDest_Sense_id\tSemantic_Similarity\n")
+	write(output_file,"src\tsrc_sense\tsrc_sense_prob\tdst\tdsr_sense\tsim\n")
 	arr = Any[]
   sense_apriori = Any[]
 
+  line_num = 0
 	for word in readlines(voc_file)
-	  word = strip(string((word)))
-		if(haskey(dictionary.word2id,word)==false)
+	  line_num += 1
+    word = strip(string((word)))
+		if(line_num == 1 || haskey(dictionary.word2id,word)==false)
       continue
     end
     empty!(sense_apriori)
