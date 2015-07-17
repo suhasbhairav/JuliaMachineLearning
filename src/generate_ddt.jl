@@ -1,3 +1,6 @@
+# ju is a patched julia of adagram (run.sh)
+# ju generate_ddt.jl ../../HugeModel ~/work/joint/src/data/ambigous-words.csv ~/tmp/matching/agagram-hugemodel-ambigous-200.csv 200
+
 using ArgParse
 using AdaGram
 
@@ -10,8 +13,8 @@ function get_args()
 			help = "Full path to an input vocabulary file (one word per line)"
 		"output"
 			help = "Full path of the output csv file with the DDT"
-    "sim_num"
-      help = "Number of similar words for each DDT entry, e.g. 10"
+        "sim_num"
+          help = "Number of similar words for each DDT entry, e.g. 10"
 	end
 
 	return parse_args(args)
