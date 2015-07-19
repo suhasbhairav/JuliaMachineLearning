@@ -35,7 +35,7 @@ function main()
 	voc_file = open(voc_fpath)
 
   # save relations
-	write(output_file,"src\tsrc_sense\tsrc_sense_prob\tdst\tdsr_sense\tsim\n")
+	write(output_file,"src\tsrc_sense\tsrc_sense_prob\tdst\tdst_sense\tsim\n")
 	arr = Any[]
   sense_apriori = Any[]
 
