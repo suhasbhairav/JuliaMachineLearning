@@ -35,7 +35,7 @@ function main()
 	voc_file = open(voc_fpath)
 
   # save relations
-	write(output_file,"src\tsrc_sense\tsrc_sense_prob\tdst\tdsr_sense\tsim\n")
+	write(output_file,"src\tsrc_sense\tsrc_sense_prob\tdst\tdst_sense\tsim\n")
 	arr = Any[]
   sense_apriori = Any[]
 
@@ -70,6 +70,7 @@ function main()
         unshift!(arr,i)
         unshift!(arr,word)
         write(output_file,join(arr,"\t"),"\n")
+        flush(output_file)
       end
     end
   end
