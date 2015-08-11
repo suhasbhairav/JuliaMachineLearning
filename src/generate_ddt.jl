@@ -70,6 +70,7 @@ function main()
         unshift!(arr,i)
         unshift!(arr,word)
         write(output_file,join(arr,"\t"),"\n")
+        flush(output_file)
       end
     end
   end
