@@ -3,6 +3,7 @@ import os
 import shutil
 import sys
 
+
 def main(folder_main, folder_extra, folder_out):
     try:
         files_extra = os.listdir(folder_extra)
@@ -14,7 +15,6 @@ def main(folder_main, folder_extra, folder_out):
              
         for fname in files_main:            
             basenames_main.append(os.path.splitext(os.path.basename(fname))[0]) 
-
         
         for fname in files_extra:
             file_name, file_extension = os.path.splitext(fname)
@@ -30,6 +30,7 @@ def main(folder_main, folder_extra, folder_out):
         e = sys.exc_info()[0]
         "Error while copying the files :", e
 
+
 if __name__ == "__main__":
     
     parser = argparse.ArgumentParser(" Copying files to the output folder")
@@ -42,7 +43,6 @@ if __name__ == "__main__":
     folder_extra = args.extra_loc
     folder_out = args.out_loc
     
-   
     try:
         if not os.path.exists(folder_main):
             print "main_loc directory not found."
