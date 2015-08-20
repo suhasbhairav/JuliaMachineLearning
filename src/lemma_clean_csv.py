@@ -34,7 +34,7 @@ if __name__ == "__main__":
             sys.exit(0)
         else:
             os.popen('cut -f 3 '+ file_in + " | head -100 > tmp"+file_in)
-            print clean_f_in
+            #print clean_f_in
             #input_content = clean_f_in
             main("tmp"+file_in, file_out)
     except:
