@@ -2,7 +2,7 @@ import argparse
 import codecs
 import os
 import sys
-
+import subprocess
 
 def main(f_in, f_out):
     f_read = codecs.open(f_in, encoding = 'utf-8')
@@ -33,9 +33,8 @@ if __name__ == "__main__":
             print "Input file does not exist"
             sys.exit(0)
         else:
-            os.popen('cut -f 3 '+ file_in + " | head -100 > tmp"+file_in)
-            #print clean_f_in
-            #input_content = clean_f_in
+            p1 = subprocess.Popen('cut -f 3 '+ file_in +' | head -100 > tmp'+file_in, stdout=subprocess.PIPE)
+            stdout_val = p.communicate()[0]
             main("tmp"+file_in, file_out)
     except:
         e = sys.exc_info()[0]
